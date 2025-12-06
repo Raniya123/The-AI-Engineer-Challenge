@@ -24,10 +24,6 @@ app.add_middleware(
 class ChatRequest(BaseModel):
     message: str
 
-@app.get("/")
-def root():
-    return {"status": "ok"}
-
 @app.post("/api/chat")
 def chat(request: ChatRequest):
     api_key = os.getenv("OPENAI_API_KEY")
